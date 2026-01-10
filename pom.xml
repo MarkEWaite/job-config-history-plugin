@@ -33,8 +33,10 @@
 
     <properties>
         <changelist>999999-SNAPSHOT</changelist>
+        <hpi.bundledArtifacts>java-diff-utils,xmlunit-core</hpi.bundledArtifacts>
+        <hpi.strictBundledArtifacts>true</hpi.strictBundledArtifacts>
         <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
-        <jenkins.baseline>2.479</jenkins.baseline>
+        <jenkins.baseline>2.504</jenkins.baseline>
         <jenkins.version>${jenkins.baseline}.3</jenkins.version>
         <maven-hpi-plugin.injectedTestName>InjectedIT</maven-hpi-plugin.injectedTestName>
         <maven-checkstyle-plugin.version>3.2.2</maven-checkstyle-plugin.version>
@@ -49,7 +51,7 @@
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
                 <artifactId>bom-${jenkins.baseline}.x</artifactId>
-                <version>5054.v620b_5d2b_d5e6</version>
+                <version>5888.vd99c2b_38128d</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -70,11 +72,19 @@
                 <groupId>jakarta.activation</groupId>
                 <artifactId>jakarta.activation-api</artifactId>
               </exclusion>
+              <exclusion>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+              </exclusion>
             </exclusions>
         </dependency>
         <dependency>
             <groupId>io.jenkins.plugins</groupId>
             <artifactId>jakarta-activation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jenkins.plugins</groupId>
+            <artifactId>jakarta-xml-bind-api</artifactId>
         </dependency>
         <dependency>
             <groupId>io.github.java-diff-utils</groupId>
